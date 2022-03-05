@@ -8,7 +8,7 @@
     "lint:fix": "npm run lint -- --fix",
     "build": "tsc -p tsconfig.json",
     "start": "node ./dist/server.js",
-    "watch": "npm run build && (tsc -p tsconfig.json -watch | nodemon --inspect=5861 ./dist/src/index.js)"
+    "watch": "npm run build && (tsc -p tsconfig.json -watch | nodemon --inspect=5861 ./dist/server.js)"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 
-import { droidRoutes } from "./api/routes";
+import { droidRoutes } from "./api/radar.routes";
 
 // Create Express server
 const app = express();
