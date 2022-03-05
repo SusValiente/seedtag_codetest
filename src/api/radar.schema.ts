@@ -1,19 +1,18 @@
-import { OpenAPIV3 } from "openapi-types";
-import { EnemyType } from "../core/model/type/enemyType.enum";
-import { ProtocolTypeEnum } from "../core/model/type/protocolType.enum";
+import { OpenAPIV3 } from 'openapi-types';
 
+import { EnemyType } from '../core/model/type/enemyType.enum';
+import { ProtocolTypeEnum } from '../core/model/type/protocolType.enum';
 
 export class RadarSchemas {
-
     public static readonly COORDINATES_OBJECT: OpenAPIV3.SchemaObject = {
         type: 'object',
         properties: {
-           x: {
-               type: 'number'
-           },
-           y: {
-               type: 'number'
-           }
+            x: {
+                type: 'number'
+            },
+            y: {
+                type: 'number'
+            }
         }
     };
 

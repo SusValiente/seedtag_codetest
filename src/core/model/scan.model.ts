@@ -1,8 +1,8 @@
-import { Coordinate } from "./coordinate.model";
-import { Enemy } from "./enemy.model";
+import { Coordinate } from './coordinate.model';
+import { Enemy } from './enemy.model';
 
 export class Scan {
-  coordinates: Coordinate;
-  enemies: Enemy;
-  allies: number;
+    coordinates: Coordinate;
+    enemies: Enemy;
+    allies: number;
 }
