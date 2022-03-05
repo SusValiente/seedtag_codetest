@@ -1,5 +1,4 @@
 import * as _ from 'lodash';
-
 import { Coordinate } from '../model/coordinate.model';
 import { Radar } from '../model/radar.model';
 import { Scan } from '../model/scan.model';
@@ -34,7 +33,7 @@ export class RadarService {
         const closestEnemiesIsActive: boolean = radar.protocols.includes(ProtocolTypeEnum.CLOSEST_ENEMIES);
         const furthestEnemiesIsActive: boolean = radar.protocols.includes(ProtocolTypeEnum.FURTHEST_ENEMIES);
 
-        let scans: Scan[] = radar.scan;
+        let scans: Scan[] = this.filterInvalidObjectives(radar.scan);
 
         if (closestEnemiesIsActive || furthestEnemiesIsActive) {
             scans = _.orderBy(
@@ -50,6 +49,23 @@ export class RadarService {
         }
 
         return scans;
+    }
+
+    /**
+     * Removes invalid objectives from scans list
+     *
+     * @private
+     * @param {Scan[]} scans
+     * @return {*}  {Scan[]}
+     * @memberof RadarService
+     */
+    private filterInvalidObjectives(scans: Scan[]): Scan[] {
+        return _.filter(scans, scan => {
+            const coordinate: Coordinate = new Coordinate();
+            coordinate.x = scan.coordinates.x;
+            coordinate.y = scan.coordinates.y;
+            return coordinate.getDistance() <= 100;
+        });
     }
 
     /**
