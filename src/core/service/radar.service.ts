@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+
 import { Coordinate } from '../model/coordinate.model';
 import { Radar } from '../model/radar.model';
 import { Scan } from '../model/scan.model';
@@ -60,7 +61,7 @@ export class RadarService {
      * @memberof RadarService
      */
     private filterInvalidObjectives(scans: Scan[]): Scan[] {
-        return _.filter(scans, scan => {
+        return _.filter(scans, (scan) => {
             const coordinate: Coordinate = new Coordinate();
             coordinate.x = scan.coordinates.x;
             coordinate.y = scan.coordinates.y;

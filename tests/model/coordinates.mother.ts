@@ -1,5 +1,4 @@
-import { Coordinate } from "../../src/core/model/coordinate.model";
-
+import { Coordinate } from '../../src/core/model/coordinate.model';
 
 export const coordinate = (x: number, y: number): Coordinate => {
     const coordinate: Coordinate = new Coordinate();
@@ -7,4 +6,3 @@ export const coordinate = (x: number, y: number): Coordinate => {
     coordinate.y = y;
     return coordinate;
 };
-
