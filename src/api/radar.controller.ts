@@ -1,14 +1,22 @@
 import { Request } from "express";
 
 import { Coordinate } from "../core/model/coordinate.model";
-import { Scan } from "../core/model/scan.model";
+import { Radar } from "../core/model/radar.model";
 import { RadarService } from "../core/service/radar.service";
 
 export class RadarController {
   private service: RadarService = new RadarService();
 
+  /**
+   * Returns the coordinate of the next enemy to be eliminated
+   * following the protocol rules specified
+   *
+   * @param {Request} request
+   * @return {*}  {Coordinate}
+   * @memberof RadarController
+   */
   public scanNextEnemy(request: Request): Coordinate {
-    const scan: Scan = request.body;
-    return this.service.scanNextEnemy(scan);
+    const radar: Radar = request.body;
+    return this.service.scanNextEnemy(radar);
   }
 }
